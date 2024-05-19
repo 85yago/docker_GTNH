@@ -29,12 +29,13 @@ CUSTOM_SERVER: lwjgl3ify-forgePatches.jar
 MultiMCでやった。
 
 - https://wiki.gtnewhorizons.com/wiki/Installing_and_Migrating
+- https://github.com/GTNewHorizons/lwjgl3ify?tab=readme-ov-file#multimc-setup-gtnh-and-non-gtnh
 - https://adoptium.net/temurin/releases/?os=windows&arch=x64&version=21
 
-Java 21のJREを落としてそれに対応したMultiMC向けのzipを落とす。
-読めばわかるが追加のJRE引数を指定する必要あり。
-
-https://wiki.gtnewhorizons.com/wiki/Main_Page
+1. Java 21のJREを落としてそれに対応したMultiMC向けのzipを落とす
+1. MultiMCで取り込んでinstanceを生成
+1. inscanceを右クリでjavaをauto detectから21を指定、RAM(6GB～)や引数も上のリンクから指定する
+1. 起動する
 
 一部翻訳されている、ここからダウンロードすること。
 
