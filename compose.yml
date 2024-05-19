@@ -1,0 +1,24 @@
+services:
+  mc:
+    image: itzg/minecraft-server:java21-graalvm
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"
+      TZ: "JST"
+      MEMORY: "16G"
+      JVM_XX_OPTS: "@java9args.txt"
+      VERSION: "1.7.10"
+      MOTD: "gue-"
+      DIFFICULTY: "normal"
+      MAX_PLAYERS: 5
+      SNOOPER_ENABLED: false
+      MODE: "survival"
+      ALLOW_FLIGHT: true
+      SERVER_NAME: "GT New Horizons 2.6.0 server"
+      TYPE: CUSTOM
+      CUSTOM_SERVER: lwjgl3ify-forgePatches.jar
+    volumes:
+      - ./data:/data
