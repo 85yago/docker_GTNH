@@ -23,6 +23,8 @@ CUSTOM_SERVER: lwjgl3ify-forgePatches.jar
 
 また、`config/Thaumcraft.cfg`の`glowing_taint`をfalseにする。
 
+起動したら参加を試みて`docker container attach <container id>`から`whitelist add <playername>`する。
+コンソールから`Ctrl+p Ctrl+q`で抜ける。
 
 ## クライアント
 
@@ -46,3 +48,5 @@ https://github.com/GTNewHorizons/GTNH-Translations/blob/master/readmes/README_ja
 
 画面上の左上の情報が小さくなってしまう。
 Mod Optionsから`Ingame`で検索し、`Config`→`General`→`scale(new)`を10くらいにすればよい。
+
+日本語キーボードではクエストブックのショートカットが設定されていないので適当なキーに設定しておくこと。
