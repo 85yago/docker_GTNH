@@ -17,7 +17,7 @@ services:
       SNOOPER_ENABLED: false
       MODE: "survival"
       ALLOW_FLIGHT: true
-      SERVER_NAME: "GT New Horizons 2.6.0 server"
+      SERVER_NAME: "GT New Horizons 2.6.1 server"
       TYPE: CUSTOM
       CUSTOM_SERVER: lwjgl3ify-forgePatches.jar
     volumes:

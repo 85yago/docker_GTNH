@@ -27,6 +27,19 @@ CUSTOM_SERVER: lwjgl3ify-forgePatches.jar
 起動したら参加を試みて`docker container attach <container id>`から`whitelist add <playername>`する。
 コンソールから`Ctrl+p Ctrl+q`で抜ける。
 
+## サーバーのアプデ・バックアップ
+
+https://wiki.gtnewhorizons.com/wiki/Server_Setup#Server_Update
+
+1. 全てのコピーを取る
+1. https://downloads.gtnewhorizons.com/ServerPacks/ から`curl -# -O url`で落とす
+1. `unzip -d new_data/ GT_New_Horizons_[ver]_Server_Java_17-21.zip`
+1. `cp -r new_data/config/ data/config/`、`cp -r new_data/libraries/ data/libraries/`、`cp -r new_data/mods/ data/mods/`
+1. configを直す
+1. `cp -r backup_data/config/JourneyMapServer/ data/config/JourneyMapServer/`
+1. `rm lwjgl3ify-forgePatches.jar java9args.txt startserver-java9.bat startserver-java9.sh`
+1. `cp lwjgl3ify-forgePatches.jar java9args.txt startserver-java9.bat startserver-java9.sh ../data`
+
 ## クライアント
 
 MultiMCでやった。
@@ -51,3 +64,9 @@ https://github.com/GTNewHorizons/GTNH-Translations/blob/master/readmes/README_ja
 Mod Optionsから`Ingame`で検索し、`Config`→`General`→`scale(new)`を10くらいにすればよい。
 
 日本語キーボードではクエストブックのショートカットが設定されていないので適当なキーに設定しておくこと。
+
+## クライアントのアプデ
+
+https://wiki.gtnewhorizons.com/wiki/Installing_and_Migrating#The_direct_process
+
+これをやった後、日本語翻訳を入れなおすこと。
