@@ -20,6 +20,7 @@ CUSTOM_SERVER: lwjgl3ify-forgePatches.jar
 2回目以降の起動にはOCIのarmインスタンスで5分ほどかかった。
 
 `data/serverutilities/serverutilities.cfg`からバックアップを有効にすること。
+また、`chunk_loading`と`chunk_claiming`をtrueにすればチャンクローダーが使えるので嬉しい。
 
 また、`config/Thaumcraft.cfg`の`glowing_taint`をfalseにする。
 
@@ -36,10 +37,10 @@ MultiMCでやった。
 
 1. Java 21のJREを落としてそれに対応したMultiMC向けのzipを落とす
 1. MultiMCで取り込んでinstanceを生成
-1. inscanceを右クリでjavaをauto detectから21を指定、RAM(6GB～)や引数も上のリンクから指定する
+1. inscanceを右クリでjavaをauto detectから21を指定、RAM(6GB～、体感10～12GBあればあまりプチフリしない)や引数も上のリンクから指定する
 1. 起動する
 
-一部翻訳されている、ここからダウンロードすること。
+一部翻訳されている、ここからダウンロード・導入すること。
 
 https://github.com/GTNewHorizons/GTNH-Translations/blob/master/readmes/README_ja_JP.md
 
