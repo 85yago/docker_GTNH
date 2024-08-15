@@ -70,3 +70,18 @@ Mod Optionsから`Ingame`で検索し、`Config`→`General`→`scale(new)`を10
 https://wiki.gtnewhorizons.com/wiki/Installing_and_Migrating#The_direct_process
 
 これをやった後、日本語翻訳を入れなおすこと。
+
+## thaumのwarpを消す
+
+流石につらいので。
+
+[ここ](https://gtnh.miraheze.org/wiki/Commands_and_Configurations#Thaumcraft)を参照した。
+
+1. `docker container attach <container id>`
+2. `list`で一覧表示
+3. `/tc warp <playername> set <value>`
+4. コンソールから`Ctrl+p Ctrl+q`で抜ける
+
+/tc warp [player_name] set [value] TEMP - change temporary warp
+/tc warp [player_name] set [value] - change normal warp
+/tc warp [player_name] set [value] PERM - change permanent warp
