@@ -19,10 +19,13 @@ CUSTOM_SERVER: lwjgl3ify-forgePatches.jar
 
 2回目以降の起動にはOCIのarmインスタンスで5分ほどかかった。
 
-`data/serverutilities/serverutilities.cfg`からバックアップを有効にすること。
-また、`chunk_loading`と`chunk_claiming`をtrueにすればチャンクローダーが使えるので嬉しい。
+- serverutilities
+    - `data/serverutilities/serverutilities.cfg`からバックアップを有効にすること。
+    - `chunk_loading`と`chunk_claiming`をtrueにすればチャンクローダーが使えるので嬉しい。
+    - task.cleanup.enabledをオンにすると敵対mobとかを定期的に消せる、ネザーポータルからあふれてくる対策とかにいいかも
+- Thaumcraft
+    - `config/Thaumcraft.cfg`の`glowing_taint`をfalseにする。
 
-また、`config/Thaumcraft.cfg`の`glowing_taint`をfalseにする。
 
 起動したら参加を試みて`docker container attach <container id>`から`whitelist add <playername>`する。
 コンソールから`Ctrl+p Ctrl+q`で抜ける。
@@ -32,13 +35,23 @@ CUSTOM_SERVER: lwjgl3ify-forgePatches.jar
 https://wiki.gtnewhorizons.com/wiki/Server_Setup#Server_Update
 
 1. 全てのコピーを取る
-1. https://downloads.gtnewhorizons.com/ServerPacks/ から`curl -# -O url`で落とす
+1. https://downloads.gtnewhorizons.com/ServerPacks/ から`curl -# -O url`で落とす、`curl -# -O -C - url`で再開できる
 1. `unzip -d new_data/ GT_New_Horizons_[ver]_Server_Java_17-21.zip`
+1. `rm -rf ./data/config/ ./data/libraries/ ./data/mods/`
 1. `cp -r new_data/config/ data/config/`、`cp -r new_data/libraries/ data/libraries/`、`cp -r new_data/mods/ data/mods/`
 1. configを直す
 1. `cp -r backup_data/config/JourneyMapServer/ data/config/JourneyMapServer/`
 1. `rm lwjgl3ify-forgePatches.jar java9args.txt startserver-java9.bat startserver-java9.sh`
 1. `cp lwjgl3ify-forgePatches.jar java9args.txt startserver-java9.bat startserver-java9.sh ../data`
+
+### JourneyMapについて
+
+`config/JourneyMapServer`にcfgファイルが生成され、この中にWorld IDが書かれている。
+Mapの情報はクライアントに保存されてて、このidが一致すればそのデータを表示する。
+
+https://yukieiji.hatenablog.com/entry/ar1647251
+
+とりあえず、バックアップを取り、ユーザーがログインしてきたときに生成されたcfgファイルのidを書き換えればよい。
 
 ## クライアント
 
@@ -70,6 +83,16 @@ Mod Optionsから`Ingame`で検索し、`Config`→`General`→`scale(new)`を10
 https://wiki.gtnewhorizons.com/wiki/Installing_and_Migrating#The_direct_process
 
 これをやった後、日本語翻訳を入れなおすこと。
+
+コピるべきもの一覧
+https://wiki.gtnewhorizons.com/wiki/Installing_and_Migrating#Files_to_Copy_when_Migrating_or_Backing_Up
+
+インスタンス
+1. `instance.cfg`
+
+1. `options.txt`, `optionsnf.txt`
+1. `.minecraft\journeymap\data\mp`
+あとは鉱石とTCのノード、スクショなど。
 
 ## thaumのwarpを消す
 
