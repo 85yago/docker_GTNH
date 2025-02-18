@@ -108,3 +108,19 @@ https://wiki.gtnewhorizons.com/wiki/Installing_and_Migrating#Files_to_Copy_when_
 /tc warp [player_name] set [value] TEMP - change temporary warp
 /tc warp [player_name] set [value] - change normal warp
 /tc warp [player_name] set [value] PERM - change permanent warp
+
+## バックアップからの復帰
+
+***作業前に必ずdataフォルダをバックアップすること！！！***
+
+dataごとコピーして、バックアップからWorldのみ移植する。
+権限直す必要あり。`sudo chown ubuntu:ubuntu -R data/`
+World/session.lockを削除して起動。
+
+### java.lang.RuntimeException: Failed to check session lock, aborting
+
+わっから～ん
+dataごとコピってないと、退避したWorldすら読めなくなるので注意。
+
+多分権限がダメそう。
+`sudo chown ubuntu:ubuntu -R data/`で解決した。
